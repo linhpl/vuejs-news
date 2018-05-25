@@ -129,8 +129,12 @@
                             <div class="leave-comments-area">
                                 <h4 class="title-bg">Leave Comments</h4>
                                 <form>
-                                    <p v-if="!successComment && errorComment.message" style="color: red; margin-bottom: 22px">Error: {{errorComment.message}}</p>
-                                    <p v-if="successComment" style="color: green; margin-bottom: 22px">Success: You wrote success in this blog</p>
+                                    <div v-if="!successComment && errorComment.message" class="alert alert-danger" role="alert">
+                                        {{errorComment.message}}
+                                    </div>
+                                    <div v-if="successComment" class="alert alert-success" role="alert">
+                                        You wrote success in this blog
+                                    </div>
                                     <fieldset>
                                         <div class="form-group">
                                             <label>Name*</label>

@@ -56,8 +56,12 @@
                         <div class="leave-comments-area">
                             <h3>Contact Us</h3>
                             <div id="form-messages"></div>
-                            <p v-if="!success && error.message" style="color: red; margin-bottom: 22px">Error: {{error.message}}</p>
-                            <p v-if="success" style="color: green; margin-bottom: 22px">Send contact success</p>
+                            <div v-if="!success && error.message" class="alert alert-danger" role="alert">
+                                {{error.message}}
+                            </div>
+                            <div v-if="success" class="alert alert-success" role="alert">
+                                Send contact success
+                            </div>
                             <form id="contact-form">
                                 <fieldset>
                                     <div class="row">
